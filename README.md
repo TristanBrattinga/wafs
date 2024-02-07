@@ -25,4 +25,5 @@ we later op de dag de keuze gekregen om een workshop bij te wonen. Oud-student/d
 workshop over het inzetten van Oauth voor het gebruik van een Spotify API. We hebben hier zoals geleerd,
 in blok tech een basic Node.js server opgezet, met het gebruik van een Express back-end. Dit ging voor mij
 allemaal redelijk simpel. Hieronder zijn wat screenshots te zien van de code:
-![carbon.png](..%2F..%2FDownloads%2Fcarbon.png)
+
+<img src="readme-images/carbon.png" alt="">
