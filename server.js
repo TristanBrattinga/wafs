@@ -13,6 +13,7 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
+// Error handling for not-existing pages
 app.use((req, res) => {
   res.status(404).send('We`re sorry, we were not able to find the page you were looking for');
 });

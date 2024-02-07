@@ -37,7 +37,7 @@ wafs/
 ├── images/
 ├── public/
 ├── scripts/
-│   └── index.js
+│   └── server.js
 ├── styles/
 │   └── style.css
 ├── views/
@@ -50,7 +50,7 @@ wafs/
 ├── .env
 ├── .gitignore
 ├── .yarnnrc.yml
-├── index.js
+├── server.js
 ├── package.json
 ├── README.md
 ├── index.html
@@ -58,3 +58,6 @@ wafs/
 ```
 Op woensdag ben ik begonnen met het deployen op Vercel. Ik wil mijn back-end en front-end in hetzelfde 
 project gaan deployen...... hie rnog meer neerzetten
+
+# Bronnenlijst
+- https://henryegloff.com/how-to-code-a-simple-dark-mode-toggle/

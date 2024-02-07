@@ -1,9 +1,9 @@
-const hamburgerMenuButton = document.querySelector('.hamburgerMenuButton')
+const hamburgerMenuButton      = document.querySelector('.hamburgerMenuButton')
 const closeHamburgerMenuButton = document.querySelector('header aside p')
-const hamburgerMenu = document.querySelector('.hamburgerMenu')
+const hamburgerMenu            = document.querySelector('.hamburgerMenu')
 
 function fetchData() {
-  fetch('./data.json')
+  fetch('../../data/data.json')
     .then((res) => {
       if (!res.ok) {
         throw new Error
@@ -25,6 +25,24 @@ const toggleHamburgerMenu = () => {
   hamburgerMenu.classList.toggle('slideOut')
 }
 
-
 hamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
 closeHamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
+
+/////////////// DARK MODE TOGGLE ///////////////
+const darkModeButton = document.querySelector('.darkModeToggle')
+const body = document.querySelector('body')
+
+const toggleDarkMode = () => {
+  if (localStorage.darkMode === 'dark') {
+    localStorage.darkMode = 'light'
+    body.setAttribute('light-mode', 'light')
+  } else {
+    localStorage.darkMode = 'dark'
+    body.setAttribute('light-mode', 'dark')
+  }
+}
+
+darkModeButton.addEventListener('click', toggleDarkMode)
+
+
+

@@ -39,6 +39,51 @@ h1 {
     font-size: 2rem;
 }
 
+
+/******************/
+/* HELPER STYLING */
+/******************/
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
 /******************/
 /* HEADER STYLING */
 /******************/
@@ -74,20 +119,6 @@ header nav ul li:nth-child(3) {
 header li a {
     font-weight: 600;
     position: relative;
-}
-
-header nav button {
-    all: unset;
-    border: 1px solid white;
-    border-radius: 5rem;
-    padding: 0.5rem 1.25rem;
-    cursor: pointer;
-    transition: all 0.3s ease
-}
-
-header nav li button:hover {
-    background-color: white;
-    color: #35393C;
 }
 
 header li a::after {
@@ -165,9 +196,69 @@ header li a::after {
 }
 
 /*******************/
-/* OVERLAY STYLING */
+/* DARKMODE TOGGLE STYLING */
 /*******************/
 
-body::before {
+.darkModeToggle {
+    background:0;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    position: relative;
+    border: none;
+}
+.darkModeToggle:focus {
+    outline:none; /* Not ideal for accessibility */
+}
+.darkModeToggle span:nth-child(1) {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 60px;
+    height:30px;
+    border-radius: 20px;
+    background-color: #d6d7db;
+    box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+}
+.darkModeToggle span:nth-child(2) {
+    position: absolute;
+    top:5px;
+    left:5px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+    transition: .3s;
+}
 
+.darkModeToggle span:nth-child(1) svg:nth-child(1) {
+    position: absolute;
+    left: 5px;
+    top: 7px;
+}
+
+.darkModeToggle span:nth-child(1) svg:nth-child(2) {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+}
+
+body {
+    background-color: black;
+    transition: background-color .3s;
+}
+body[light-mode="light"] {
+    background-color: white;
+    color: black;
+}
+body[light-mode="light"] .darkModeToggle span:nth-child(1){
+    background-color: black;
+    color: white;
+}
+body[light-mode="light"] .darkModeToggle span:nth-child(2) {
+    left: 35px;
+    background-color: white;
 }

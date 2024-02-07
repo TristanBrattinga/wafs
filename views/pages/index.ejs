@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test test</title>
+    <title>Web App From Scratch 23-24</title>
     <%- include('../partials/head'); %>
 </head>
-<body class="container">
-
+<body>
 <header>
     <%- include('../partials/header'); %>
 </header>
 
 <main>
-    <div class="jumbotron">
-        <h1>This is great</h1>
-        <p>Welcome to templating using EJS</p>
-    </div>
+    <div id="dataContainer"></div>
+    <%- include('../partials/introduction'); %>
 </main>
 
 <footer>
     <%- include('../partials/footer'); %>
 </footer>
-<script src=''></script>
+<script src='/scripts/script.js'></script>
 </body>
 </html>
