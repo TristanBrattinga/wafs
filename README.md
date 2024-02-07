@@ -26,4 +26,35 @@ workshop over het inzetten van Oauth voor het gebruik van een Spotify API. We he
 in blok tech een basic Node.js server opgezet, met het gebruik van een Express back-end. Dit ging voor mij
 allemaal redelijk simpel. Hieronder zijn wat screenshots te zien van de code:
 
+### server.js
 <img src="readme-images/carbon.png" alt="">
+
+Hieronder de mappenstructuur van mijn webapp op dit moment:
+```
+wafs/
+├── data/
+│   └── data.json
+├── images/
+├── public/
+├── scripts/
+│   └── index.js
+├── styles/
+│   └── style.css
+├── views/
+│   ├── pages/
+│   │   └── index.ejs
+│   └── partials/
+│       ├── footer.ejs
+│       ├── head.ejs
+│       └── header.ejs
+├── .env
+├── .gitignore
+├── .yarnnrc.yml
+├── index.js
+├── package.json
+├── README.md
+├── index.html
+└── yarn.lock
+```
+Op woensdag ben ik begonnen met het deployen op Vercel. Ik wil mijn back-end en front-end in hetzelfde 
+project gaan deployen...... hie rnog meer neerzetten
