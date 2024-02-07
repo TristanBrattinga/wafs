@@ -21,7 +21,7 @@ app.use((req, res) => {
 app.use('/api', api)
 
 app.listen(port, () => {
-  console.log(`Server is listening to port: ${port}`);
+  console.log(`Server is listening to port: ${port} `);
 });
 
 module.exports = app
