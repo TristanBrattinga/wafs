@@ -400,18 +400,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docs@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "docs@workspace:."
-  dependencies:
-    dotenv: "npm:^16.4.1"
-    ejs: "npm:^3.1.9"
-    express: "npm:^4.18.2"
-    nodemon: "npm:^3.0.3"
-    uuid: "npm:^9.0.1"
-  languageName: unknown
-  linkType: soft
-
 "dotenv@npm:^16.4.1":
   version: 16.4.1
   resolution: "dotenv@npm:16.4.1"
@@ -1709,6 +1697,18 @@ __metadata:
   checksum: f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
   languageName: node
   linkType: hard
+
+"wafs@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "wafs@workspace:."
+  dependencies:
+    dotenv: "npm:^16.4.1"
+    ejs: "npm:^3.1.9"
+    express: "npm:^4.18.2"
+    nodemon: "npm:^3.0.3"
+    uuid: "npm:^9.0.1"
+  languageName: unknown
+  linkType: soft
 
 "which@npm:^2.0.1":
   version: 2.0.2
