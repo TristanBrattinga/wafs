@@ -262,3 +262,16 @@ body[light-mode="light"] .darkModeToggle span:nth-child(2) {
     left: 35px;
     background-color: white;
 }
+
+/********************/
+/* CAROUSEL STYLING */
+/********************/
+
+.carousel {
+    display: flex;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
