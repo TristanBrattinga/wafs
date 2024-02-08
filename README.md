@@ -26,7 +26,7 @@ workshop over het inzetten van Oauth voor het gebruik van een Spotify API. We he
 in blok tech een basic Node.js server opgezet, met het gebruik van een Express back-end. Dit ging voor mij
 allemaal redelijk simpel. Hieronder zijn wat screenshots te zien van de code:
 
-### index.js
+### server.js
 <img src="readme-images/carbon.png" alt="">
 
 Hieronder de mappenstructuur van mijn webapp op dit moment:
@@ -37,7 +37,7 @@ wafs/
 ├── images/
 ├── public/
 ├── scripts/
-│   └── index.js
+│   └── server.js
 ├── styles/
 │   └── style.css
 ├── views/
@@ -50,7 +50,7 @@ wafs/
 ├── .env
 ├── .gitignore
 ├── .yarnnrc.yml
-├── index.js
+├── server.js
 ├── package.json
 ├── README.md
 ├── index.html

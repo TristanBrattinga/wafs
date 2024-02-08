@@ -1,9 +1,15 @@
+const body                     = document.querySelector('body')
 const hamburgerMenuButton      = document.querySelector('.hamburgerMenuButton')
 const closeHamburgerMenuButton = document.querySelector('header aside p')
 const hamburgerMenu            = document.querySelector('.hamburgerMenu')
+const darkModeButton           = document.querySelector('.darkModeToggle')
+const scrollToTopButton        = document.querySelector('.scrollToTop')
 
 function fetchData() {
-  fetch('../../data/data.json')
+  const movies = ['return of the jedi', 'phantom menace'];
+  const movieTitles = movies.join(',');
+
+  fetch(`http://www.omdbapi.com/?apikey=12dd510b&t=${encodeURIComponent(movieTitles)}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error
@@ -12,9 +18,7 @@ function fetchData() {
       return res.json()
     })
     .then((data) => {
-      const dataContainer = document.getElementById('container')
-
-      dataContainer.innerHTML = JSON.stringify(data.name, null, 2)
+      console.log(data)
     })
     .catch((e) => console.error('Unable to fetch data:', e))
 }
@@ -23,14 +27,13 @@ fetchData()
 
 const toggleHamburgerMenu = () => {
   hamburgerMenu.classList.toggle('slideOut')
+  hamburgerMenuButton.classList.toggle('menuOpen')
 }
 
 hamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
 closeHamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
 
 /////////////// DARK MODE TOGGLE ///////////////
-const darkModeButton = document.querySelector('.darkModeToggle')
-const body = document.querySelector('body')
 
 const toggleDarkMode = () => {
   if (localStorage.darkMode === 'dark') {
@@ -44,5 +47,10 @@ const toggleDarkMode = () => {
 
 darkModeButton.addEventListener('click', toggleDarkMode)
 
+/////////////// SCROLL TO TOP BUTTON ///////////////
 
+const handleScrollToTop = () => {
+  window.scrollTo(0,0)
+}
 
+scrollToTopButton.addEventListener('click', handleScrollToTop)

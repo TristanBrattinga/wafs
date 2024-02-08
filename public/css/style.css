@@ -28,6 +28,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--primary-font);
+    height: 200vh;
 }
 
 li {
@@ -46,10 +47,9 @@ h1 {
 
 .container {
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
     padding-right: 16px;
     padding-left: 16px;
+    margin: 2rem auto;
 }
 
 @media (min-width: 640px) {
@@ -131,6 +131,7 @@ header li a::after {
 
 .hamburgerMenu {
     display: none;
+    padding: 20px 40px;
 }
 
 .hamburgerMenuButton {
@@ -152,10 +153,14 @@ header li a::after {
     }
 
     .hamburgerMenuButton {
-        width: fit-content;
+        width: 40px;
+        height: 40px;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         gap: 0.5rem;
+        position: relative;
     }
 
     .hamburgerMenuButton span {
@@ -163,6 +168,7 @@ header li a::after {
         width: 2rem;
         height: 1px;
         background-color: white;
+        transition: all 0.5s ease-in-out;
     }
 
     .hamburgerMenuButton span:last-child {
@@ -175,7 +181,7 @@ header li a::after {
 
     .hamburgerMenu {
         display: block;
-        height: 100vh;
+        height: 100%;
         position: absolute;
         top: 0;
         right: 0;
@@ -192,6 +198,26 @@ header li a::after {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .hamburgerMenuButton.menuOpen span:first-child {
+        transform: rotate(405deg);
+        position: absolute;
+        width: 1.5rem;
+        right: 0;
+    }
+
+    .hamburgerMenuButton.menuOpen span:last-child {
+        transform: rotate(-405deg);
+        position: absolute;
+        width: 1.5rem;
+        right: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .hamburgerMenu {
+        width: 100%;
     }
 }
 
@@ -269,9 +295,155 @@ body[light-mode="light"] .darkModeToggle span:nth-child(2) {
 
 .carousel {
     display: flex;
+    align-items: center;
+    overflow: auto;
 }
 
 .carousel img {
     width: 100%;
     height: auto;
+}
+
+/********************************/
+/* SCROLL TO TOP BUTTON STYLING */
+/********************************/
+
+.scrollToTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    background-color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.scrollToTop.hidden {
+    display: none;
+}
+
+.scrollToTop:hover {
+    animation: wiggle 0.5s linear infinite;
+}
+
+body[light-mode="light"] .scrollToTop {
+    background-color: black;
+}
+
+body[light-mode="light"] .scrollToTop svg path {
+    fill: white;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+/********************************/
+/* SCROLL TO TOP BUTTON STYLING */
+/********************************/
+
+.settingsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    background-color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+
+.settingsButton.hidden {
+    display: none;
+}
+
+.settingsButton:hover {
+    animation: wiggle 0.5s linear infinite;
+}
+
+body[light-mode="light"] .settingsButton {
+    background-color: black;
+}
+
+body[light-mode="light"] .settingsButton svg path {
+    fill: white;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+/**********************/
+/* MOVIE CARD STYLING */
+/**********************/
+
+.card {
+    border-radius: 30px;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow-y: hidden;
+}
+
+.column {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.column-reverse {
+    transform: translateY(calc(-100% + 100vh));
+    flex-direction: column-reverse;
+}
+
+@keyframes adjust-position {
+    /* Start position: shift entire column up, but not so that it goes out of view */
+    from {
+        transform: translateY(calc(-100% + 100vh));
+    }
+    /* End position: shift entire column down, but not so that it goes out of view */
+    to {
+        transform: translateY(calc(100% - 100vh));
+    }
+}
+
+.column-reverse {
+    animation: adjust-position linear forwards;
+    animation-timeline: scroll(root block);
+}
+
+@media (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        overflow-y: hidden;
+    }
 }
