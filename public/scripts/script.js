@@ -1,15 +1,11 @@
 const body                     = document.querySelector('body')
 const hamburgerMenuButton      = document.querySelector('.hamburgerMenuButton')
-const closeHamburgerMenuButton = document.querySelector('header aside p')
 const hamburgerMenu            = document.querySelector('.hamburgerMenu')
 const darkModeButton           = document.querySelector('.darkModeToggle')
 const scrollToTopButton        = document.querySelector('.scrollToTop')
 
-function fetchData() {
-  const movies = ['return of the jedi', 'phantom menace'];
-  const movieTitles = movies.join(',');
-
-  fetch(`http://www.omdbapi.com/?apikey=12dd510b&t=${encodeURIComponent(movieTitles)}`)
+const fetchData = async () => {
+  await fetch(``)
     .then((res) => {
       if (!res.ok) {
         throw new Error
@@ -23,6 +19,22 @@ function fetchData() {
     .catch((e) => console.error('Unable to fetch data:', e))
 }
 
+const fetchPublicApi = async () => {
+  await fetch(`http://www.omdbapi.com/?apikey=12dd510b&t=phantom`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error
+        (`HTTP error! Status: ${res.status}`)
+      }
+      return res.json()
+    })
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((e) => console.error('Unable to fetch data:', e))
+}
+
+fetchPublicApi()
 fetchData()
 
 const toggleHamburgerMenu = () => {
@@ -31,7 +43,6 @@ const toggleHamburgerMenu = () => {
 }
 
 hamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
-closeHamburgerMenuButton.addEventListener('click', toggleHamburgerMenu)
 
 /////////////// DARK MODE TOGGLE ///////////////
 
