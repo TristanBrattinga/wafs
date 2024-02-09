@@ -17,23 +17,31 @@
     </aside>
     <ul>
         <li>
-            <h1>Tristan Brattinga</h1>
+            <a href="/">
+                <h1 id="nameLogo">
+                    <% if (!data.name) { %>
+                      <%= data.name %>
+                    <% } else { %>
+                      Tristan Brattinga
+                   <% } %>
+                </h1>
+            </a>
         </li>
         <li>
-            <!--            <ul class="menuItems">-->
-            <!--                <li>-->
-            <!--                    <a>Me</a>-->
-            <!--                </li>-->
-            <!--                <li>-->
-            <!--                    <a>About</a>-->
-            <!--                </li>-->
-            <!--                <li>-->
-            <!--                    <a>Favourite Movies</a>-->
-            <!--                </li>-->
-            <!--                <li>-->
-            <!--                    <a>Characters</a>-->
-            <!--                </li>-->
-            <!--            </ul>-->
+            <ul class="menuItems">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#movies">Favourite Movies</a>
+                </li>
+                <li>
+                    <a href="#characters">Characters</a>
+                </li>
+            </ul>
         </li>
         <li>
             <button class="darkModeToggle" aria-label="Toggle Dark Mode">

@@ -28,7 +28,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--primary-font);
-    height: 200vh;
 }
 
 li {
@@ -40,6 +39,14 @@ h1 {
     font-size: 2rem;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body[light-mode="light"] a {
+    color: black;
+}
 
 /******************/
 /* HELPER STYLING */
@@ -49,7 +56,7 @@ h1 {
     width: 100%;
     padding-right: 16px;
     padding-left: 16px;
-    margin: 2rem auto;
+    margin: 0 auto;
 }
 
 @media (min-width: 640px) {
@@ -90,6 +97,15 @@ h1 {
 
 header {
     padding: 0.5rem 1.25rem;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 20;
+    transition-duration: 0.3s;
+}
+
+body[light-mode="light"] header {
+    background-color: white;
 }
 
 header nav {
@@ -104,21 +120,19 @@ header nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
     width: 100%;
-}
-
-header nav ul li {
-    width: calc(100%/3);
-}
-
-header nav ul li:nth-child(3) {
-    display: flex;
-    justify-content: end;
 }
 
 header li a {
     font-weight: 600;
     position: relative;
+}
+
+header>nav>ul>li:nth-child(3) {
+    width: 310px;
+    display: flex;
+    justify-content: end;
 }
 
 header li a::after {
@@ -138,18 +152,51 @@ header li a::after {
     display: none;
 }
 
-.menuItems li {
-    white-space: nowrap;
+.menuItems {
+    gap: 40px;
+    position: relative;
 }
 
-@media (max-width: 768px) {
+.menuItems li {
+    white-space: nowrap;
+    position: relative;
+}
+
+.menuItems a::after {
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: scaleX(0);
+    transition: all 13s ease-in-out;
+    transform-origin: left;
+}
+
+.menuItems a:hover::after {
+    display: block;
+    transform: scale(100%);
+}
+
+body[light-mode="light"] .menuItems a::after {
+    background-color: black;
+}
+
+.menuItems a {
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 850px) {
     .menuItems {
         display: none;
     }
 
     header nav h1 {
-        font-size: 1rem;
-
+        font-size: 1.5rem;
     }
 
     .hamburgerMenuButton {
@@ -236,6 +283,7 @@ header li a::after {
     position: relative;
     border: none;
 }
+
 .darkModeToggle:focus {
     outline:none; /* Not ideal for accessibility */
 }
@@ -283,7 +331,7 @@ body[light-mode="light"] {
     color: black;
 }
 body[light-mode="light"] .darkModeToggle span:nth-child(1){
-    background-color: black;
+    background-color: #35393C;
     color: white;
 }
 body[light-mode="light"] .darkModeToggle span:nth-child(2) {
@@ -321,8 +369,8 @@ body[light-mode="light"] .darkModeToggle span:nth-child(2) {
     height: 30px;
     border-radius: 50px;
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1.25rem;
+    right: 1.25rem;
     cursor: pointer;
 }
 
@@ -364,8 +412,8 @@ body[light-mode="light"] .scrollToTop svg path {
     height: 30px;
     border-radius: 50px;
     position: fixed;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
     cursor: pointer;
 }
 
@@ -448,4 +496,34 @@ body[light-mode="light"] .settingsButton svg path {
         gap: 20px;
         overflow-y: hidden;
     }
+}
+
+/************************/
+/* INTRODUCTION STYLING */
+/************************/
+
+.introduction {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 40px;
+    position: relative;
+}
+
+.introduction article {
+    width: 50%;
+    position: sticky;
+    top: 86.5px;
+    height: fit-content;
+}
+
+.introduction section {
+    width: 50%;
+}
+
+.introduction img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

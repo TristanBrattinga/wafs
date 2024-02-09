@@ -1,41 +1,30 @@
-const body                     = document.querySelector('body')
-const hamburgerMenuButton      = document.querySelector('.hamburgerMenuButton')
-const hamburgerMenu            = document.querySelector('.hamburgerMenu')
-const darkModeButton           = document.querySelector('.darkModeToggle')
-const scrollToTopButton        = document.querySelector('.scrollToTop')
+const body                = document.querySelector('body')
+const hamburgerMenuButton = document.querySelector('.hamburgerMenuButton')
+const hamburgerMenu       = document.querySelector('.hamburgerMenu')
+const darkModeButton      = document.querySelector('.darkModeToggle')
+const scrollToTopButton   = document.querySelector('.scrollToTop')
 
-const fetchData = async () => {
-  await fetch(``)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error
-        (`HTTP error! Status: ${res.status}`)
-      }
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-    })
-    .catch((e) => console.error('Unable to fetch data:', e))
-}
+const favouriteMovies = ['return-of-the-jedi', 'i-am-legend', 'avengers-endgame', 'the-hateful-eight']
 
-const fetchPublicApi = async () => {
-  await fetch(`http://www.omdbapi.com/?apikey=12dd510b&t=phantom`)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error
-        (`HTTP error! Status: ${res.status}`)
-      }
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-    })
-    .catch((e) => console.error('Unable to fetch data:', e))
+const fetchPublicApi = () => {
+  favouriteMovies.map((movie) => {
+    fetch(`http://www.omdbapi.com/?apikey=12dd510b&t=${movie}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error
+          (`HTTP error! Status: ${res.status}`)
+        }
+        return res.json()
+      })
+      .then((data) => {
+        // console.log(data)
+      })
+      .catch((e) => console.error('Unable to fetch data:', e))
+
+  })
 }
 
 fetchPublicApi()
-fetchData()
 
 const toggleHamburgerMenu = () => {
   hamburgerMenu.classList.toggle('slideOut')
@@ -61,7 +50,7 @@ darkModeButton.addEventListener('click', toggleDarkMode)
 /////////////// SCROLL TO TOP BUTTON ///////////////
 
 const handleScrollToTop = () => {
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0)
 }
 
 scrollToTopButton.addEventListener('click', handleScrollToTop)

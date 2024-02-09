@@ -9,13 +9,14 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 
 // index page
-app.get('/', async function(req, res) {
-  // const apiKey = process.env.OMDB_API_KEY
-  // const apiUrl = `http://www.omdbapi.com/?apikey=12dd510b&t=phantom`
-  // const getData = await fetch(apiUrl)
-  // console.log('hallo')
-  // console.log(res.json(getData))
-  res.render('pages/index')
+app.get('/', async (req, res) => {
+  try {
+    const response = await fetch('https://tristanbrattinga.github.io/wafs/data/data.json')
+    const data = await response.json()
+    res.render('pages/index', { data: data })
+  } catch (e) {
+    console.error('Unable to fetch the data:', e)
+  }
 })
 
 // Error handling for not-existing pages
