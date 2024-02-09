@@ -13,6 +13,7 @@ app.get('/', async (req, res) => {
   try {
     const response = await fetch('https://tristanbrattinga.github.io/wafs/data/data.json')
     const data = await response.json()
+    console.log(data)
     res.render('pages/index', { data: data })
   } catch (e) {
     console.error('Unable to fetch the data:', e)
