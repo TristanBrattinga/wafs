@@ -230,7 +230,7 @@ body[light-mode="light"] .menuItems a::after {
     .hamburgerMenu {
         display: block;
         height: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         background-color: grey;
@@ -526,4 +526,150 @@ body[light-mode="light"] .settingsButton svg path {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+/******************/
+/* FOOTER STYLING */
+/******************/
+
+footer {
+    padding: 2rem 0 1rem;
+}
+
+footer h6 {
+    font-family: Ailerons, sans-serif;
+    font-size: 1.25rem;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 10px;
+}
+
+.socialLinks li a {
+    background-color: white;
+    border-radius: 10px;
+    padding: 6px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialLinks li a:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+/*********************/
+/* SKILL CARD STYLING */
+/*********************/
+
+#skillSection {
+    margin: 20px 0;
+}
+
+.skillCard {
+    background-color: #35393C;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.skillCard:nth-child(odd) {
+    transform: translateY(50%);
+    animation: bounce 4s ease-in-out infinite;
+}
+
+.skillCard:nth-child(even) {
+    transform: translateY(-50%);
+    animation: bounce-reverse 4s ease-in-out infinite;
+}
+
+.skillGrid {
+    display: flex;
+    gap: 20px;
+    animation: slide 20s infinite linear;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(150%);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+}
+
+@keyframes bounce-reverse {
+    0%, 100% {
+        transform: translateY(50%);
+    }
+    50% {
+        transform: translateY(-50%);
+    }
+}
+
+/******************/
+/* MOVIES STYLING */
+/******************/
+
+.movies {
+    /*Toegepast door */
+    scroll-margin-top: 40px;
+    /* Kevin .... */
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.movies section {
+    width: 50%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.movieSlider {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.movieImages {
+    display: flex;
+    gap: 20px;
+}
+
+.movieImages li {
+    flex: 1 0 auto;
+}
+
+.movieImages li img {
+    width: 100%;
+    height: auto;
+}
+
+.movieInfos {
+    display: flex;
+    gap: 20px;
+}
+
+.text {
+    color: red;
 }

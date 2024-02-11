@@ -2,16 +2,16 @@
     <aside class="hamburgerMenu">
         <ul>
             <li>
-                <a>Me</a>
+                <a href="#about">About</a>
             </li>
             <li>
-                <a>About</a>
+                <a href="#skillSection">Skills</a>
             </li>
             <li>
-                <a>Favourite Movies</a>
+                <a href="#movies">Favourite Movies</a>
             </li>
             <li>
-                <a>Characters</a>
+                <a href="#characters">Characters</a>
             </li>
         </ul>
     </aside>
@@ -19,10 +19,10 @@
         <li>
             <a href="/">
                 <h1 id="nameLogo">
-                    <% if (!data.name) { %>
+                    <% if (data.name) { %>
                       <%= data.name %>
                     <% } else { %>
-                      Tristan Brattinga
+                      Tristan test
                    <% } %>
                 </h1>
             </a>
@@ -33,7 +33,7 @@
                     <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#skills">Skills</a>
+                    <a href="#skillSection">Skills</a>
                 </li>
                 <li>
                     <a href="#movies">Favourite Movies</a>

@@ -1,0 +1,26 @@
+<section id="movies" class="movies container">
+    <section>
+        <ul class="movieImages">
+            <% movies?.map(movie => { %>
+                <li>
+                    <img src='<%= movie.Poster%>' alt=''>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+    <section>
+        <ul class="movieInfos">
+            <% movies?.map(movie => { %>
+                <li>
+                    <h3>
+                        <%= movie.Title %>
+                    </h3>
+                    <p>
+                        <%= movie.Plot %>
+                    </p>
+                </li>
+            <% }) %>
+        </ul>
+        <p class="text">Hallo ik ben tristan </p>
+    </section>
+</section>
