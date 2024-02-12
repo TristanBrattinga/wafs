@@ -16,9 +16,36 @@
     "eating"
   ],
   "favourite-movies": [
-    "Star Wars",
-    "Iron Man",
-    "Spiderman"
+    "Star Wars: Return of the Jedi",
+    "Iron Man 1",
+    "Spider-man 1",
+    "The Hateful Eight",
+    "I am Legend",
+    "Transformers",
+    "Friday",
+    "The Lord of the Rings: The Two Towers"
+  ],
+  "favourite-characters": [
+    "Darth Vader",
+    "Spider-man",
+    "Tony Stark",
+    "Anakin Skywalker",
+    "Legolas",
+    "Brian Griffin"
+  ],
+  "favourite-genres": [
+    "Sciencefiction",
+    "Action",
+    "Thriller",
+    "Adventure",
+    "Comedy"
+  ],
+  "favourite-actors": [
+    "Robert Downey Jr.",
+    "Will Smith",
+    "Ryan Reynolds",
+    "Hayden Christensen",
+    "Cillian Murphy"
   ],
   "avatar": {
     "url": "./images/me.jpg",
