@@ -129,7 +129,7 @@ header li a {
     position: relative;
 }
 
-header>nav>ul>li:nth-child(3) {
+header > nav > ul > li:nth-child(3) {
     width: 310px;
     display: flex;
     justify-content: end;
@@ -243,7 +243,7 @@ body[light-mode="light"] .menuItems a::after {
         transform: translateX(0);
     }
 
-    .hamburgerMenu ul{
+    .hamburgerMenu ul {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -275,7 +275,7 @@ body[light-mode="light"] .menuItems a::after {
 /*******************/
 
 .darkModeToggle {
-    background:0;
+    background: 0;
     box-sizing: border-box;
     cursor: pointer;
     height: 30px;
@@ -285,23 +285,25 @@ body[light-mode="light"] .menuItems a::after {
 }
 
 .darkModeToggle:focus {
-    outline:none; /* Not ideal for accessibility */
+    outline: none; /* Not ideal for accessibility */
 }
+
 .darkModeToggle span:nth-child(1) {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 60px;
-    height:30px;
+    height: 30px;
     border-radius: 20px;
     background-color: #d6d7db;
     box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
     transition: .3s;
 }
+
 .darkModeToggle span:nth-child(2) {
     position: absolute;
-    top:5px;
-    left:5px;
+    top: 5px;
+    left: 5px;
     width: 20px;
     height: 20px;
     background-color: #fff;
@@ -326,14 +328,17 @@ body {
     background-color: black;
     transition: background-color .3s;
 }
+
 body[light-mode="light"] {
     background-color: white;
     color: black;
 }
-body[light-mode="light"] .darkModeToggle span:nth-child(1){
+
+body[light-mode="light"] .darkModeToggle span:nth-child(1) {
     background-color: #35393C;
     color: white;
 }
+
 body[light-mode="light"] .darkModeToggle span:nth-child(2) {
     left: 35px;
     background-color: white;
@@ -391,10 +396,18 @@ body[light-mode="light"] .scrollToTop svg path {
 }
 
 @keyframes wiggle {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
 }
 
 /********************************/
@@ -434,10 +447,18 @@ body[light-mode="light"] .settingsButton svg path {
 }
 
 @keyframes wiggle {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
 }
 
 /**********************/
@@ -599,7 +620,7 @@ footer section {
 }
 
 @keyframes slide {
-    0%{
+    0% {
         transform: translateX(150%);
     }
     100% {
@@ -633,27 +654,70 @@ footer section {
     /*Toegepast door */
     scroll-margin-top: 40px;
     /* Kevin .... */
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    position: relative;
 }
 
-.movies section {
+.movies > article {
+    display: flex;
+    gap: 40px;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.movies > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.movies > ul li:nth-child(1), .movies > ul li:nth-child(6) {
+    width: 32px;
+    height: 32px;
+}
+
+.movies > ul button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.movies > ul button:hover {
+    transform: scale(115%);
+}
+
+.movies > ul button:active {
+    transform: scale(95%);
+}
+
+.movies > ul li span {
+    display: block;
+    background-color: grey;
+    width: 10px;
+    height: 10px;
+    border-radius: 40px;
+}
+
+.movies article section {
     width: 50%;
-    position: relative;
     overflow-x: hidden;
 }
 
-.movieSlider {
+.movieImages {
     width: 100%;
     overflow-x: auto;
-}
-
-.movieImages {
     display: flex;
     gap: 20px;
+}
+
+.movieImages::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+.movieImages::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .movieImages li {
@@ -668,8 +732,16 @@ footer section {
 .movieInfos {
     display: flex;
     gap: 20px;
+    width: 100%;
+    overflow-x: auto;
 }
 
-.text {
-    color: red;
+.movieInfos li {
+    flex: 1 0 auto;
 }
+
+.movieInfos li p {
+    max-width: 600px;
+    margin-top: 20px;
+}
+

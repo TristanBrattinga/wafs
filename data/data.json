@@ -33,6 +33,20 @@
     "Legolas",
     "Brian Griffin"
   ],
+  "superheroes": [
+    "Spider-man",
+    "Iron Man",
+    "legolas",
+    "",
+    ""
+  ],
+  "supervillains": [
+    "Emperor Palpatine",
+    "Darth Vader",
+    "The Green Goblin",
+    "Ozai",
+    "Thanos"
+  ],
   "favourite-genres": [
     "Sciencefiction",
     "Action",
