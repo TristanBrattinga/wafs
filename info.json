@@ -1,0 +1,18 @@
+{
+  "firstName": "Tristan",
+  "lastName": "Brattinga",
+  "avatar_url": "https://i.pinimg.com/736x/ff/4b/a6/ff4ba66bb390f81489f102f9a8e61cab.jpg",
+  "age": 24,
+  "city": "Amsterdam",
+  "hobbies": [
+    "cooking",
+    "gaming",
+    "fishing",
+    "coding",
+    "fitness",
+    "eating"
+  ],
+  "truthsAndLies" : ["Ik heb rood haar", "Ik hou van vis", "Mijn partner is een beroemd persoon"],
+  "bio" : "Hi, my name is Tristan Brattinga and I'm an enthusiastic front-end developer. I am 24 years old and I work at Webbers Agency. It is my dream to go to Melbourne for my 2nd minor. I want to become a full-stack developer and there I can study more back-end and software oriented courses.",
+  "favouriteAnimal" : "Komodovaraan"
+}
