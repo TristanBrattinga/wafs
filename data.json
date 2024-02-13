@@ -62,8 +62,8 @@
     "Cillian Murphy"
   ],
   "avatar": {
-    "url": "./images/me.jpg",
+    "url": "https://tristanbrattinga.github.io/wafs/public/images/spiderman.png",
     "ducky": "",
-    "alternativeText": "Photo of me"
+    "alternativeText": "Avatar of my favourite superhero"
   }
 }
