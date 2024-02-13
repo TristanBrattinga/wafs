@@ -40,7 +40,7 @@ const fetchMovies = () => {
 
 // Function that fetches personal JSON data
 const fetchPersonalData = () => {
-  fetch('https://tristanbrattinga.github.io/wafs/data/data.json').then((res) => {
+  fetch('https://tristanbrattinga.github.io/wafs/data.json').then((res) => {
       if (!res.ok) {
         throw new Error
         (`HTTP error! Status: ${res.status}`)
@@ -51,7 +51,7 @@ const fetchPersonalData = () => {
       personalData = data
       return personalData
     })
-    .catch((e) => console.error('Unable to fetch data:', e))
+    .catch((e) => console.error('Unable to fetch personal data:', e))
 }
 
 // Function calls

@@ -1,5 +1,15 @@
-<section class="container introduction">
-    <article id="dataContainer"><p><%= data.description %></p></article>
+<section id="about" class="container introduction">
+    <article id="dataContainer">
+        <p><%= data.description %></p>
+        <p>Some of my hobbies are:</p>
+        <ul>
+            <% data.hobbies.map(hobby => { %>
+                <li>
+                    <%= hobby %>
+                </li>
+            <% }) %>
+        </ul>
+    </article>
     <section>
         <ul>
             <li><img src="/images/me.jpg" alt="" /></li>

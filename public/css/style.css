@@ -262,6 +262,14 @@ body[light-mode="light"] .menuItems a::after {
         width: 1.5rem;
         right: 0;
     }
+
+    body[light-mode="light"] .hamburgerMenuButton span {
+        background-color: black;
+    }
+
+    body[light-mode="light"] .hamburgerMenuButton.menuOpen span {
+        background-color: white;
+    }
 }
 
 @media (max-width: 375px) {
@@ -410,11 +418,20 @@ body[light-mode="light"] .scrollToTop svg path {
     }
 }
 
+
+
+@media (max-width: 768px) {
+    .scrollToTop {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
 /********************************/
 /* SCROLL TO TOP BUTTON STYLING */
 /********************************/
 
-.settingsButton {
+.mobileDarkModeToggle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -430,19 +447,19 @@ body[light-mode="light"] .scrollToTop svg path {
     cursor: pointer;
 }
 
-.settingsButton.hidden {
+.mobileDarkModeToggle.hidden {
     display: none;
 }
 
-.settingsButton:hover {
+.mobileDarkModeToggle:hover {
     animation: wiggle 0.5s linear infinite;
 }
 
-body[light-mode="light"] .settingsButton {
+body[light-mode="light"] .mobileDarkModeToggle {
     background-color: black;
 }
 
-body[light-mode="light"] .settingsButton svg path {
+body[light-mode="light"] .mobileDarkModeToggle svg path {
     fill: white;
 }
 
@@ -458,6 +475,13 @@ body[light-mode="light"] .settingsButton svg path {
     }
     75% {
         transform: rotate(-10deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobileDarkModeToggle {
+        bottom: 1rem;
+        left: 1rem;
     }
 }
 
@@ -545,8 +569,41 @@ body[light-mode="light"] .settingsButton svg path {
 
 .introduction img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+}
+
+.introduction > article p:nth-child(2) {
+    margin-top: 20px;
+}
+
+.introduction > article ul li  {
+    list-style-type: circle;
+    list-style-position: inside;
+    text-transform: capitalize;
+}
+
+@media (max-width: 768px){
+    .introduction {
+        flex-direction: column;
+    }
+
+    .introduction section {
+        width: 100%;
+    }
+
+    .introduction section ul {
+        display: flex;
+    }
+
+    .introduction article {
+        width: 100%;
+        position: static;
+    }
+
+    .introduction {
+        font-size: 1rem;
+    }
 }
 
 /******************/
@@ -560,6 +617,7 @@ footer {
 footer h6 {
     font-family: Ailerons, sans-serif;
     font-size: 1.25rem;
+    text-align: center;
 }
 
 footer section {
@@ -587,6 +645,13 @@ footer section {
 .socialLinks li a:hover {
     transform: translateY(-5px);
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+@media (max-width: 768px){
+    footer h6 {
+        font-size: 1rem;
+        max-width: 250px;
+    }
 }
 
 /*********************/
@@ -668,7 +733,7 @@ footer section {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 20px 0;
+    margin: 20px 0;
 }
 
 .movies > ul li:nth-child(1), .movies > ul li:nth-child(6) {
@@ -700,6 +765,10 @@ footer section {
     border-radius: 40px;
 }
 
+.movies > ul li span.active {
+    background-color: white;
+}
+
 .movies article section {
     width: 50%;
     overflow-x: hidden;
@@ -708,40 +777,71 @@ footer section {
 .movieImages {
     width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     display: flex;
     gap: 20px;
+    scroll-snap-type: x mandatory;
 }
 
-.movieImages::-webkit-scrollbar-thumb {
-    background: white;
-}
-
-.movieImages::-webkit-scrollbar-track {
-    background-color: transparent;
+.movieImages::-webkit-scrollbar, .movieInfos::-webkit-scrollbar {
+    display: none;
 }
 
 .movieImages li {
-    flex: 1 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
 }
 
 .movieImages li img {
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 100%;
 }
 
 .movieInfos {
     display: flex;
     gap: 20px;
     width: 100%;
+    overflow-y: hidden;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
 .movieInfos li {
-    flex: 1 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
 }
 
 .movieInfos li p {
-    max-width: 600px;
+    width: 600px;
     margin-top: 20px;
 }
 
+body[light-mode="light"] .movies > ul button svg path {
+    fill: black;
+}
+
+@media (max-width: 768px) {
+    .movies > article {
+        flex-direction: column;
+        font-size: 1rem;
+        gap: 20px;
+    }
+
+    .movies > article p, .movieImages li img {
+        margin-bottom: 20px;
+    }
+
+    .movies article section {
+        width: 100%;
+    }
+
+    .movieInfos li p  {
+        width: 300px;
+    }
+
+    .movieImages li img {
+        width: 300px;
+        height: 100%;
+        max-height: 450px;
+    }
+}
