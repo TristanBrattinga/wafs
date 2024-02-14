@@ -24,8 +24,6 @@ Er zaten een aantal vereisten aan de opdracht. Zie vereisten hieronder:
 
 ## Week 1
 
----
-
 Op maandag ben ik met mijn groepje begonnen met de idee-generatie voor onze team app. Wij willen een
 web app gaan bouwen waar je ieders favoriete helden en schurken uit films, series, cartoons en anime's
 kan zien. Het duurde best even voordat we het concept van de opdracht begrepen, maar dat is uiteindelijk helemaal
@@ -337,8 +335,6 @@ nextButton.addEventListener('click', handleSlideNext)
 
 ## Team gedeelte
 
----
-
 Aan het begin van het vak zijn wij ingedeeld in groepjes aan de hand van ervaring en kunnen. Ik was in mijn groepje de
 'senior' en heb ongeschreven de rol van leider op mij gekregen/genomen. Ik ben zelf niet de beste leider, omdat ik hier
 niet veel ervaring mee heb. Dit was voor mij best wel moeilijk. Hier vertel ik meer over in mijn reflectie. Op maandag
@@ -364,8 +360,6 @@ animatie-tweak.
 | <img src="./readme-images/teamfinal.png" alt=""> | <img src="./readme-images/teamfinalmobile.png" alt=""> |
 
 ## Reflectie
-
----
 
 Ik vond dit vak op zich wel leuk, maar het was voor mij net iets te ondermaats. Ik heb wel geprobeerd om het
 interessant voor mijzelf te maken door te proberen mijn Express app op Vercel te deployen, maar dit was veel te
