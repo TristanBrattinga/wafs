@@ -44,6 +44,13 @@ wafs/
 └── README.md
 ```
 
+Ook heb ik een breakdown/eerste schets van mijn webapp gemaakt. Uiteindelijk is dit helemaal anders geworden, maar is het
+toch een goed idee om dit te doen, zodat je een globaal idee krijgt van de website. Zie hieronder de breakdown:
+
+| Desktop                                                 | Mobile                                                 |
+|---------------------------------------------------------|--------------------------------------------------------|
+| <img src="./readme-images/breakdowndesktop.png" alt=""> | <img src="./readme-images/breakdownmobile.png" alt=""> |
+
 Op dinsdag ben ik wat verder gaan werken aan mijn front-end. Ik heb wat Javascript geïntroduceerd om een
 mobiel hamburger menu te kunnen gebruiken. Dit is mijn eerste stap richting responsiveness. Verder hebben
 we later op de dag de keuze gekregen om een workshop bij te wonen. Oud-student/docent Bas de Greeuw gaf een
@@ -84,8 +91,34 @@ wafs/
 └── yarn.lock
 ```
 
-Op woensdag ben ik begonnen met het deployen op Vercel. Ik wil mijn back-end en front-end in hetzelfde
-project gaan deployen...... hie rnog meer neerzetten
+
+## Deployment 
+
+Omdat ik veel met Next.js en Vercel werk, leek het mij een leuk idee om mijn website hierop te gaan deployen. Nou bleek
+dit toch wat moeilijker te zijn dan verwacht. Je moet hiervoor een api map aanmaken, waar je dan je routes in kan 
+definiëren. Het is mij uiteindelijk wel gelukt om iets live te zetten, maar voor de hoeveelheid tijd die ik had was dit
+teveel gevraagd. Hier een voorbeeld van zo'n route handler:
+```javascript
+export default function handler(req, res) {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.json({ name: 'John Doe' });
+}
+```
+
+Een leuke uitdaging op eigen initiatief zou zijn om zelf proberen een soort van framework op te zetten door middel van
+het renderen van statische html op de server en deze naar de client te sturen. 
+
+Na aanrader van klasgenoten heb ik ervoor gekozen om te deployen op <a href="https://wwww.render.com">Render</a>.
+Dit gaat echt heel gemakkelijk. Het lijkt best wel op Vercel, maar heeft een makkelijkere deploy instance voor Node.js 
+apps. De stappen voor het deployen:
+
+1. Maak een account aan met je github account op render;
+2. Importeer je github repo die je wilt deployen;
+3. Automatisch herkent render je project en de package manager die je gebruikt;
+4. Click op deploy en je website staat live!
+
+<img src="./readme-images/render.png" alt="">
 
 ### Micro-interactie
 
@@ -385,3 +418,4 @@ Ook ik kan leren van uitleg geven aan mijn mede-leerlingen.
 
 - https://henryegloff.com/how-to-code-a-simple-dark-mode-toggle/
 - https://www.omdbapi.com/
+- https://vercel.com/guides/using-express-with-vercel
