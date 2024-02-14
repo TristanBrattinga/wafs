@@ -112,7 +112,7 @@ De code:
 ```html
 
 <body light-mode="dark">
-....
+    <....>
 </body>
 ```
 
@@ -155,8 +155,6 @@ body[light-mode="light"] .darkModeToggle span:nth-child(2) {
     background-color: white;
 }
 ```
-
----
 
 ## Week 2
 
