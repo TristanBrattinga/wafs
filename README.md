@@ -1,6 +1,6 @@
 # Web apps from Scratch 2023/2024
 
-[//]: # (<img src="./readme-images/intro.gif" alt="Intro GIF">)
+<img src="./readme-images/intro.gif" alt="Intro GIF">
 
 ## Introductie
 
