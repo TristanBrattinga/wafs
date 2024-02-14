@@ -12,6 +12,7 @@ const nextButton           = document.getElementById('nextButton')
 const dots                 = document.querySelectorAll('.movies span')
 const links                = document.querySelectorAll('.hamburgerMenu ul li')
 const hobbiesList          = document.getElementById('hobbiesList')
+const description          = document.getElementById('description')
 
 /////////////// PERSONAL DATA FETCH ///////////////
 
@@ -33,11 +34,11 @@ const fetchPersonalData = () => {
 const createElements = (data) => {
   if (data) {
     data.hobbies.forEach(hobby => {
-      console.log(hobby)
       const li       = document.createElement('li')
       li.textContent = hobby
       hobbiesList.appendChild(li)
     })
+    description.innerText = data.description
   }
 }
 
