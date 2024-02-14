@@ -413,3 +413,6 @@ Ook ik kan leren van uitleg geven aan mijn mede-leerlingen.
 - https://henryegloff.com/how-to-code-a-simple-dark-mode-toggle/
 - https://www.omdbapi.com/
 - https://vercel.com/guides/using-express-with-vercel
+- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+- https://gist.github.com/rxaviers/7360908
+- https://www.google.com/search?q=ste+images+next+to+each+other+markdown&sourceid=chrome&ie=UTF-8
