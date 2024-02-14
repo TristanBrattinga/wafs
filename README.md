@@ -122,7 +122,7 @@ ook ergens live gezet worden. Het leek mij een leuk idee om dit met Vercel te ga
 uiteindelijk veel te moeilijk en onhandig te zijn. Ik heb hier best wat tijd aan "verspilt", maar het uitzoeken
 was op zich wel leerzaam. Ook omdat ik hier 3 dagen aan heb besteed, heb ik geleerd om voortaan eerst aan de
 minimale vereisten te werken en zorgen dat deze aanwezig zijn en dan verder werken. Dit is een belangrijke les
-die ik heb meegenomen hieruit :sweat-smile:.
+die ik heb meegenomen hieruit :sweat_smile:.
 
 ### Samenwerken
 
