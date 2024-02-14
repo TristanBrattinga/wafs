@@ -11,6 +11,39 @@ const prevButton           = document.getElementById('prevButton')
 const nextButton           = document.getElementById('nextButton')
 const dots                 = document.querySelectorAll('.movies span')
 const links                = document.querySelectorAll('.hamburgerMenu ul li')
+const hobbiesList          = document.getElementById('hobbiesList')
+
+/////////////// PERSONAL DATA FETCH ///////////////
+
+// Function that fetches personal JSON data
+const fetchPersonalData = () => {
+  fetch('https://tristanbrattinga.github.io/wafs/data.json').then((res) => {
+      if (!res.ok) {
+        throw new Error
+        (`HTTP error! Status: ${res.status}`)
+      }
+      return res.json()
+    })
+    .then((data) => {
+      return createElements(data)
+    })
+    .catch((e) => console.error('Unable to fetch personal data:', e))
+}
+
+const createElements = (data) => {
+  if (data) {
+    data.hobbies.forEach(hobby => {
+      console.log(hobby)
+      const li       = document.createElement('li')
+      li.textContent = hobby
+      hobbiesList.appendChild(li)
+    })
+  }
+}
+
+fetchPersonalData()
+
+/////////////// HAMBURGER MENU TOGGLE ///////////////
 
 const toggleHamburgerMenu = () => {
   hamburgerMenu.classList.toggle('slideOut')

@@ -16,9 +16,6 @@ const favouriteMovies = ['return-of-the-jedi', 'i-am-legend', 'avengers-endgame'
 // Empty array that will house the fetched movie data
 let movies = []
 
-// Empty object that will house the fetched personal data
-let personalData = {}
-
 // Function that maps over the favourite movies array and pushes them into the movies array
 const fetchMovies = () => {
   favouriteMovies.map((movie) => {
@@ -38,29 +35,12 @@ const fetchMovies = () => {
   })
 }
 
-// Function that fetches personal JSON data
-const fetchPersonalData = () => {
-  fetch('https://tristanbrattinga.github.io/wafs/data.json').then((res) => {
-      if (!res.ok) {
-        throw new Error
-        (`HTTP error! Status: ${res.status}`)
-      }
-      return res.json()
-    })
-    .then((data) => {
-      personalData = data
-      return personalData
-    })
-    .catch((e) => console.error('Unable to fetch personal data:', e))
-}
-
-// Function calls
+// Function call
 fetchMovies()
-fetchPersonalData()
 
 // Route handle for the index page
 app.get('/', async (req, res) => {
-  res.render('pages/index', { data: personalData, movies: movies })
+  res.render('pages/index', { movies: movies })
 })
 
 // Error route handling for not-existing pages

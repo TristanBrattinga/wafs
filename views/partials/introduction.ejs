@@ -1,13 +1,8 @@
 <section id="about" class="container introduction">
     <article id="dataContainer">
-        <p><%= data.description %></p>
+        <p>${personalData.description}</p>
         <p>Some of my hobbies are:</p>
-        <ul>
-            <% data.hobbies.map(hobby => { %>
-                <li>
-                    <%= hobby %>
-                </li>
-            <% }) %>
+        <ul id="hobbiesList">
         </ul>
     </article>
     <section>
