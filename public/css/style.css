@@ -659,7 +659,7 @@ footer section {
 /*********************/
 
 #skillSection {
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 .skillCard {
@@ -681,7 +681,7 @@ footer section {
 .skillGrid {
     display: flex;
     gap: 20px;
-    animation: slide 20s infinite linear;
+    animation: slide 10s infinite linear;
 }
 
 @keyframes slide {
